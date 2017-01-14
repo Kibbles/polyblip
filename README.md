@@ -8,7 +8,7 @@ Polyblip is a Bottle notification server for Polycom VoIP phones that shows a Wi
 - Windows, since the dialog box relies on Windows functions. Can easily be made generic with TkInter though.
 
 ## How to configure
-- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification.
+- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom vvx 300 phones; other models may or may not work (though I imagine the XML response messages are fairly standard)
 
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 

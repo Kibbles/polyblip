@@ -2,11 +2,15 @@ import untangle
 import balloontip
 from bottle import route, run, request
 
+# This file will log all registered call events
 logfile = "call.log"
 
+# This file should be present at launch with the
+# prerequisite server information on the first line.
+ip_filename = "ip.conf"
 ip_address = ""
 port = ""
-ip_filename = "ip.conf"
+
 
 try:
     ip_file = open(ip_filename)
@@ -21,13 +25,14 @@ except IOError:
 
 @route('/', method='POST')
 def index():
+    # out lets us know if it's an outgoing call or not
     out = False
     postdata = request.body.read()
 
     # Parse the XML packet we get from the phone
     parsed = untangle.parse(postdata)
 
-    # Write to log
+    # Write it to the log file
     lfile = open(logfile, 'ab+')
     lfile.write(postdata + "\n\n")
     lfile.close()
@@ -37,7 +42,7 @@ def index():
         out = True
 
     # Extract names. If it's not an outgoing call, it's probably incoming
-	# (or corrupted data, which we're not accounting for here)
+    # (or corrupted data, which we're not accounting for here)
     if out:
         call_to = parsed.PolycomIPPhone.OutgoingCallEvent.CalledPartyName.cdata
         call_from = "You"
@@ -56,10 +61,10 @@ def index():
         print call_type + " call."
     print "Time: ", call_time
 
-    # Show alert for incoming calls only.
+    # Show alert for incoming calls on the desktop.
     if not out:
         balloontip.balloon_tip(call_type, "Call from " + call_from)
     return 0
 
-# Run the listening web server
+# Run the listening Bottle web server
 run(host=ip_address, port=port, debug=True)

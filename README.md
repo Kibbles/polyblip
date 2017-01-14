@@ -1,5 +1,5 @@
 # polyblip
-Polyblip is a Bottle notification server for Polycom VoIP phones that shows a Windows notification containing the name of the caller. It intercepts XML messages from the phone and extracts the caller information. It's all rather basic stuff, but it works decently well. Some assembly required.
+Polyblip is a Bottle notification server for Polycom VoIP phones that shows a Windows notification containing the name of the caller. It intercepts XML messages from the phone and extracts the caller information. Some assembly required.
 
 ## What you need
 - A Polycom phone configured to send XML packets to your server (tested with Polycom vvx 300 phones)

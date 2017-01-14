@@ -13,4 +13,5 @@ Polyblip is a Bottle notification server for Polycom VoIP phones that shows a Wi
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 
 - Then you need to define your receiving computer's IP address and port in the `ip.conf` file. 
+
 The syntax is `ip:port` (e.g. `127.0.0.1:1337`)

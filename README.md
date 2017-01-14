@@ -21,7 +21,7 @@ python -m pip install untangle bottle
 
 - Define your receiving computer's IP address and port in the included `ip.conf` file. The syntax for this file is a single line featuring `ip:port` (e.g. `127.0.0.1:1337`). You can use nearly any port you want; Bottle isn't very picky.
 
-- Start your server using `call_alert.py`. If everything worked, you now have a listening Bottle server. Have someone call you, and you'll get their name in a popup bubble. It also logs all received calls to `call.log`.
+- Start your server using `call_alert.py`. If everything worked, you now have a listening Bottle server. Have someone call you, and you'll get their name in a popup bubble. It also logs all received raw XML messages to `call.log`.
 
 ## Planned features
 - Native cross-platform support. This one's a bit of a doozy since not all OS platforms support notifications, and having a big ugly dialog box with an "OK" button is awful.

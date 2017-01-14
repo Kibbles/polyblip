@@ -2,7 +2,7 @@
 polyblip is a Bottle server for Polycom VoIP phone messages that shows a Windows notification containing the name of the caller. It intercepts XML messages from the phone and extracts the caller information. Some assembly required.
 
 ## What you need
-- A Polycom phone configured to send XML packets to your server (tested with Polycom vvx 300 phones)
+- A Polycom phone configured to send XML packets to your server (tested with Polycom VVX 300 phones)
 - Windows, since the notification relies on Windows functions. Can easily be made generic with TkInter though.
 - [Bottle](http://bottlepy.org/docs/dev/) for the listening web server
 - [Untangle](https://github.com/stchris/untangle) for the XML conversion
@@ -15,7 +15,7 @@ python -m pip install untangle bottle
 ```
 
 ## How to configure
-- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom vvx 300 phones; other models may or may not work (though I imagine the XML response messages are fairly standard).
+- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom VVX 300 devices; other models may or may not work (though I imagine the web portals and XML response messages are fairly standard).
 
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 

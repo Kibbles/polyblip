@@ -1,5 +1,12 @@
 # -- coding: utf-8 --
 
+# ------------------------------------------
+# balloontip.py was originally created by wontoncc:
+# https://gist.github.com/wontoncc/1808234
+# ------------------------------------------
+# This version includes a very minor revision to line
+# 49, unregistering the class after the window is removed.
+
 from win32api import *
 from win32gui import *
 import win32con

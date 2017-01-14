@@ -8,11 +8,11 @@ polyblip is a Bottle server for Polycom VoIP phone messages that shows a Windows
 - Windows, since the dialog box relies on Windows functions. Can easily be made generic with TkInter though.
 
 ## How to configure
-- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom vvx 300 phones; other models may or may not work (though I imagine the XML response messages are fairly standard)
+- You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom vvx 300 phones; other models may or may not work (though I imagine the XML response messages are fairly standard).
 
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 
-- Then you need to define your receiving computer's IP address and port in a file called `ip.conf`. The syntax for this file is a single line featuring `ip:port` (e.g. `127.0.0.1:1337`). You can use almost port you want; Bottle isn't very picky.
+- Then you need to define your receiving computer's IP address and port in an included file called `ip.conf`. The syntax for this file is a single line featuring `ip:port` (e.g. `127.0.0.1:1337`). You can use almost port you want; Bottle isn't very picky.
 
 - Start your server using `call_alert.py`. If everything worked, you now have a listening bottle server. Have someone call you, and you'll get their name in a popup bubble. It also logs all received calls to `call.log`.
 

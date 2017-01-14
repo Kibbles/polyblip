@@ -11,6 +11,7 @@ polyblip is a Bottle server for Polycom VoIP phone messages that shows a Windows
 For most people, this will suffice:
 
 `python -m pip install untangle
+
 python -m pip install bottle`
 
 ## How to configure

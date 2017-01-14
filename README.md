@@ -12,6 +12,9 @@ Polyblip is a Bottle notification server for Polycom VoIP phones that shows a Wi
 
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 
-- Then you need to define your receiving computer's IP address and port in the `ip.conf` file. 
+- Then you need to define your receiving computer's IP address and port in a file called `ip.conf`. The syntax for this file is a single line featuring `ip:port` (e.g. `127.0.0.1:1337`). You can use almost port you want; Bottle isn't very picky.
 
-The syntax is `ip:port` (e.g. `127.0.0.1:1337`)
+- Start your server using `call_alert.py`. If everything worked, you now have a listening bottle server. Have someone call you, and you'll get their name in a popup bubble. It also logs all received calls to `call.log`.
+
+## Planned features
+- Native cross-platform support. This one's a bit of a doozy since not all OS platforms support notifications, and having a big ugly dialog box with an "OK" button is awful.

@@ -15,7 +15,7 @@ python -m pip install untangle bottle
 ```
 
 ## Setup
-- You will first need to configure your phone to send messages to your server by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom VVX 300 devices; other models may or may not work (though I imagine the web portals and XML response messages are fairly standard).
+- You will first need to configure your phone to send messages to your server by enabling the "Incoming Call" telephony event notification on the phone's web portal. We're using Polycom VVX 300 devices; other models may or may not work (though I imagine the web portals and XML response messages are fairly standard).
 
 ![phone setup](https://i.imgur.com/c7Nid2r.png)
 

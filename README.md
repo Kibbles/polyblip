@@ -3,9 +3,10 @@ polyblip is a Bottle server for Polycom VoIP phone messages that shows a Windows
 
 ## What you need
 - A Polycom phone configured to send XML packets to your server (tested with Polycom vvx 300 phones)
-- [Bottle](http://bottlepy.org/docs/dev/) (for the web server)
+- Windows, since the notification relies on Windows functions. Can easily be made generic with TkInter though.
+- [Bottle](http://bottlepy.org/docs/dev/) for the listening web server
+- [Untangle](https://github.com/stchris/untangle) for the XML conversion
 - [Wontoncc's `balloontip.py`](https://gist.github.com/wontoncc/1808234) for the notifier (which is included, with a hotfix for repeated message displays)
-- Windows, since the dialog box relies on Windows functions. Can easily be made generic with TkInter though.
 
 ## How to configure
 - You will first need to configure your phone to send messages to your computer by enabling the "Incoming Call" telephony notification on the phone's web portal. We're using Polycom vvx 300 phones; other models may or may not work (though I imagine the XML response messages are fairly standard).

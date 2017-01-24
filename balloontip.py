@@ -7,16 +7,18 @@
 # This version includes a very minor revision to line
 # 49, unregistering the class after the window is removed.
 
-from win32api import *
-from win32gui import *
-import win32con
-import sys, os
-import struct
-import time
 
 
 class WindowsBalloonTip:
     def __init__(self, title, msg):
+        #Import libraries
+        from win32api import *
+        from win32gui import *
+        import win32con
+        import sys, os
+        import struct
+        import time
+
         message_map = {
             win32con.WM_DESTROY: self.OnDestroy,
         }
@@ -54,6 +56,22 @@ class WindowsBalloonTip:
         nid = (self.hwnd, 0)
         Shell_NotifyIcon(NIM_DELETE, nid)
         PostQuitMessage(0)  # Terminate the app.
+
+
+
+
+class LinuxNotify():
+    """LinuxNotify calls the notification system for Linux."""
+    def __init__(self, title, msg):
+        #Import the library to use libnotify.
+        from gi.repository import Notify
+
+        #Register the application and give the class a name to use.
+        Notify.init("Polyblip")
+        #Make the notification and show it.
+        Notify.Notification.new(title, msg).show()
+        #Unregister the application.
+        Notify.uninit()
 
 
 def balloon_tip(title, msg):

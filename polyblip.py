@@ -1,6 +1,16 @@
 import untangle
-import balloontip
+from sys import platform
 from bottle import route, run, request
+
+#Determine which version of the notification class to import.
+if platform == "win32" or platform == "cygwin":
+    from winballoontip import balloon_tip
+elif platform == "linux" or platform == "linux2":
+    from linuxballoontip import balloon_tip
+else:
+    print "System OS not supported"
+    exit()
+
 
 # This file will log all registered call events
 logfile = "call.log"
@@ -63,7 +73,7 @@ def index():
 
     # Show alert for incoming calls on the desktop.
     if not out:
-        balloontip.balloon_tip(call_type, "Call from " + call_from)
+        balloon_tip(call_type, "Call from " + call_from)
     return 0
 
 # Run the listening Bottle web server

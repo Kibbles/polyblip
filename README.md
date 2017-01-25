@@ -1,5 +1,5 @@
 # polyblip
-polyblip is a Bottle server for Polycom VoIP phones that shows a Windows notification containing the name of the caller. It intercepts XML messages from the phone and extracts the caller information. Some assembly required.
+polyblip is a Bottle server for Polycom VoIP phones that shows a notification containing the name of the caller. It intercepts XML messages from the phone and extracts the caller information. Some assembly required.
 
 Thanks to [nicqrocks](https://github.com/nicqrocks) for adding Linux support! Yay Linux.
 

@@ -6,7 +6,7 @@ Thanks to [nicqrocks](https://github.com/nicqrocks) for adding Linux support! Ya
 
 ## What you need
 - A Polycom phone configured to send XML packets to your server (tested with Polycom VVX 300 phones)
-- Windows, since the notification relies on Windows functions. Can easily be made generic with TkInter though.
+- Windows or Linux as host OS
 - [Bottle](http://bottlepy.org/docs/dev/) for the listening web server
 - [Untangle](https://github.com/stchris/untangle) for the XML conversion
 - [Wontoncc's `balloontip.py`](https://gist.github.com/wontoncc/1808234) for the notifier (which is included, with a hotfix for repeated message displays)

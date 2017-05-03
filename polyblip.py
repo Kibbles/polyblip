@@ -1,4 +1,5 @@
 import untangle
+import os
 from sys import platform
 from bottle import route, run, request
 
@@ -11,13 +12,15 @@ else:
     print "System OS not supported"
     exit()
 
+#Var to hold the dir of this file.
+loc = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 # This file will log all registered call events
-logfile = "call.log"
+logfile = loc + "call.log"
 
 # This file should be present at launch with the
 # prerequisite server information on the first line.
-ip_filename = "ip.conf"
+ip_filename = loc + "ip.conf"
 ip_address = ""
 port = ""
 
